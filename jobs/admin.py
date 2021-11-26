@@ -1,22 +1,22 @@
 from django.contrib import admin
 from .models import Job
-from candidates.models import Candidate, CandidateJobMap
+from candidates.models import CandidateJobMap
 
-# Register your models here.
+#Register your models here.
 
 class CandidateInline(admin.TabularInline):
     model = CandidateJobMap
 
     def get_readonly_fields(self,request,*args,**kwargs):
-        #model = CandidateJobMap
+        model = CandidateJobMap
         if request.user.is_superuser:
             return []
         else:
-            return ('candidate')
+            return []
        
 
 class JobAdmin(admin.ModelAdmin):
-    #exclude = ('creator')
+    # exclude = ('creator')
     list_display = ('position_name','creator',)
     inlines = (CandidateInline,)
 

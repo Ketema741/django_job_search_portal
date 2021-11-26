@@ -6,14 +6,6 @@ from django.urls import reverse
 # Create your models here.
 class Job(models.Model):
 
-    """
-    -Postition name
-    -Text Description
-    -Age criteria
-    -Salary
-    -No. of openings
-    """
-
     position_name       = models.CharField(max_length=100)
     text_description    = models.TextField()
     min_age             = models.IntegerField()
@@ -21,4 +13,4 @@ class Job(models.Model):
     salary              = models.IntegerField() 
     n_openings          = models.IntegerField()
     creator             =models.ForeignKey(User,on_delete=models.CASCADE,default=None)
-    #author              = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete= models.CASCADE,default=None)
+

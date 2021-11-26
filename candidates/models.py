@@ -32,7 +32,7 @@ class Candidate(models.Model):
 
 
     def __str__(self):
-        return self.name
+        return "{} - {}".format(self.name,self.mobile)
 
 
 

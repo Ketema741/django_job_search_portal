@@ -9,5 +9,7 @@ local_settings.py
 db.sqlite3
 /media
 /staticfiles
+.vscode
+venv.py
 
 # End by https://www.gitignore.io/api/django
